@@ -1,8 +1,6 @@
 import React, {FC, useCallback} from 'react'
-import {View, Text, Button, TextInput, FlatList, Image, TouchableOpacity} from "react-native";
+import {View, TextInput, Image, TouchableOpacity} from "react-native";
 import {styles} from "./style";
-import {useDispatch} from "react-redux";
-import {WeatherListTypes} from "../../../../store/types/weatherListTypes";
 import {SearchInputProps} from "./type";
 
 const SearchInput: FC<SearchInputProps> = props => {
@@ -23,17 +21,24 @@ const SearchInput: FC<SearchInputProps> = props => {
 
   return (
     <View style={styles.searchContainer}>
-      <Image source={require('../../../../assets/UIImage/Search.png')}/>
-      <TextInput style={styles.searchInput}
-                 placeholder={'Enter city name...'}
-                 onChangeText={text => onChangeText(text, openSearch, closeSearch, search, setText)}
-                 value={text}
-      />
-      <TouchableOpacity onPress={() => {
-        setText('');
-        closeSearch()
-      }}><Image style={styles.closeIcon}
-                source={require('../../../../assets/UIImage/CloseIcon.png')}/></TouchableOpacity>
+      <Image style={styles.searchIcon} source={require('../../../../assets/UIImage/Search.png')}/>
+      <View style={styles.inputContainer}>
+        <TextInput style={styles.searchInput}
+                   placeholder={'Enter city name...'}
+                   onChangeText={text => onChangeText(text, openSearch, closeSearch, search, setText)}
+                   value={text}
+        />
+        <TouchableOpacity onPress={() => {
+          setText('');
+          closeSearch()
+        }}>
+          {
+            text ? <Image style={styles.closeIcon} source={require('../../../../assets/UIImage/CloseIcon.png')}/>
+                 : null
+          }
+        </TouchableOpacity>
+
+      </View>
     </View>
   )
 }

@@ -16,11 +16,20 @@ export const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#CDCDCD',
     borderRadius: 5,
-    justifyContent: "center",
+    justifyContent: "space-between",
     alignItems: "center",
     paddingVertical: 5,
   },
   closeIcon: {
-
+    marginRight: 10
+  },
+  searchIcon: {
+    marginLeft: 10
+  },
+  inputContainer: {
+    flex: 1,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center"
   }
 })

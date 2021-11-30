@@ -9,7 +9,7 @@ export const styles = StyleSheet.create({
   },
   flatList: {
     width: '100%',
-    paddingHorizontal: 3
+    paddingHorizontal: 3,
   },
   touchable: {
     justifyContent: 'space-between',
