@@ -40,7 +40,7 @@ export const fetchWeatherListError = createAction<FetchWeatherListErrorPayload>(
 //   }
 // }
 
-export const fetchWeatherListByNameRequest = createAction(WeatherListTypes.FETCH_WEATHER_LIST_BY_NAME_REQUEST)
+export const fetchWeatherListByNameRequest = createAction<string>(WeatherListTypes.FETCH_WEATHER_LIST_BY_NAME_REQUEST)
 
 // export const fetchWeatherListByNameSuccess = (payload: FetchWeatherListByNameSuccessPayload): FetchWeatherListByNameSuccess => {
 //   return {
