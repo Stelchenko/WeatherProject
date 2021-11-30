@@ -16,7 +16,7 @@ export enum WeatherListTypes {
 export type WeatherListState = {
   weathersList: WeatherListItem[],
   currentCity: WeatherListItem,
-  searchCity: WeatherListItem | null,
+  searchCity: WeatherListItem,
   isLoading: boolean,
   isSearching: boolean,
   searchText: string,

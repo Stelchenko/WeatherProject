@@ -9,7 +9,7 @@ const HomeStackScreen = () => {
   return (
     <HomeStack.Navigator screenOptions={{headerShown: false}}>
       <HomeStack.Screen name={'City'} component={HomeScreen}/>
-      <HomeStack.Screen options={{headerShown: true}} name={'Details'} component={DetailsScreen}/>
+      <HomeStack.Screen options={{headerShown: true, headerTintColor: "black"}} name={'Details'} component={DetailsScreen}/>
     </HomeStack.Navigator>
   )
 }

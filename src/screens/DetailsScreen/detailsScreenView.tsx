@@ -11,7 +11,7 @@ const DetailsScreenView: FC<DetailsScreenViewProps> = props => {
       : <View style={styles.screen}>
         <Text style={styles.text}>{date.date} {"\n"} {date.time} </Text>
         <Image style={styles.img} source={{uri: `https://openweathermap.org/img/wn/${currentCity.iconId}.png`}}/>
-        <Text style={styles.text}>{currentCity.temp} C</Text>
+        <Text style={styles.text}>{currentCity.temp >= 0 ? '+' + currentCity.temp : currentCity.temp} C</Text>
       </View>
   )
 }

@@ -58,7 +58,7 @@ export const fetchWeatherListByNameSuccess = createAction<FetchWeatherListByName
 //   }
 // }
 
-export const fetchWeatherBySearchRequest = createAction(WeatherListTypes.FETCH_WEATHER_BY_SEARCH_REQUEST)
+export const fetchWeatherBySearchRequest = createAction<string>(WeatherListTypes.FETCH_WEATHER_BY_SEARCH_REQUEST)
 
 // export const fetchWeatherBySearchSuccess = (payload: FetchWeatherBySearchSuccessPayload): FetchWeatherBySearchSuccess => {
 //   return {

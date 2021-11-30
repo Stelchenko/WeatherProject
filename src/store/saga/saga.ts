@@ -1,4 +1,4 @@
-import {call, put, takeEvery, debounce, takeLatest} from 'redux-saga/effects'
+import {call, put, takeEvery, debounce} from 'redux-saga/effects'
 import * as Api from "../../../api/weatherApi";
 import {
   fetchWeatherBySearchNotFound,
@@ -14,7 +14,7 @@ import {currentCityWeather, mapWeathersList} from "../../utils/mapUtils";
 const delay = (ms: number) => new Promise(res => setTimeout(res, ms))
 
 
-function* fetchWeather(action: any): any {
+function* fetchWeather(): any {
 
   try {
     const result = yield call(Api.getWeatherFromApi);

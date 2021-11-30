@@ -14,7 +14,7 @@ export function mapWeathersList(draftWeathersList: DraftWeatherListItem[] | unde
   else return []
 }
 
-export function currentCityWeather(draftWeather: DraftWeatherListItem | undefined): WeatherListItem | null{
+export function currentCityWeather(draftWeather: DraftWeatherListItem): WeatherListItem{
   if (draftWeather){
     return {id: draftWeather.id,
       cityName: draftWeather.name,
@@ -23,5 +23,11 @@ export function currentCityWeather(draftWeather: DraftWeatherListItem | undefine
       iconId: draftWeather.weather[0].icon,
       dt: draftWeather.dt,
       timezone: draftWeather.timezone}}
-  else return null
+  else return {id: '',
+    cityName: '',
+    temp: 0,
+    weatherType: '',
+    iconId: '',
+    dt: 0,
+    timezone: 0}
 }

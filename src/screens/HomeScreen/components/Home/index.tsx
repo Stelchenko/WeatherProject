@@ -19,9 +19,9 @@ const Home: FC<HomeProps> = props => {
     <FlatList
       columnWrapperStyle={{justifyContent: 'space-between'}}
       numColumns={2}
-      showsHorizontalScrollIndicator={false}
+      showsVerticalScrollIndicator={false}
       style={styles.flatList}
-      keyExtractor={(item, index) => item.id}
+      keyExtractor={(item) => item.id}
       data={weathersList}
       refreshControl={
         <RefreshControl

@@ -1,10 +1,6 @@
 import {
-  Lat,
-  Lon,
   Id,
-  Main,
   City,
-  Description,
   WeatherType,
   Temperature,
   CoordsItem,
@@ -39,9 +35,9 @@ export type DraftWeatherListItem = {
   clouds?: CloudsItem,
   rain: RainItem | null
   snow: SnowItem | null
-  dt?: Dt,
+  dt: Dt,
   sys?: SysItem,
-  timezone?: Timezone,
+  timezone: Timezone,
   id: Id
   name: City,
   cod?: Cod
