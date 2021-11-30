@@ -33,7 +33,7 @@ export type FetchWeatherListErrorPayload = string
 export type FetchWeatherListByNameSuccessPayload = WeatherListItem
 export type FetchWeatherListByNameRequestPayload = string
 export type FetchWeatherBySearchRequestPayload = string
-export type FetchWeatherBySearchSuccessPayload = WeatherListItem | null
+export type FetchWeatherBySearchSuccessPayload = WeatherListItem
 
 
 export type OpenSearch = {
@@ -44,55 +44,7 @@ export type CloseSearch = {
   type: WeatherListTypes.CLOSE_SEARCH
 }
 
-export type FetchWeatherBySearchNotFound = {
-  type: WeatherListTypes.FETCH_WEATHER_BY_SEARCH_NOT_FOUND
-}
 
-export type FetchWeatherBySearchSuccess = {
-  type: WeatherListTypes.FETCH_WEATHER_BY_SEARCH_SUCCESS,
-  payload: FetchWeatherBySearchSuccessPayload
-}
-
-export type FetchWeatherBySearchRequest = {
-  type: WeatherListTypes.FETCH_WEATHER_BY_SEARCH_REQUEST,
-  payload: FetchWeatherBySearchRequestPayload
-}
-
-export type FetchWeatherListRequest = {
-  type: WeatherListTypes.FETCH_WEATHER_LIST_REQUEST
-}
-
-export type FetchWeatherListByNameRequest = {
-  type: WeatherListTypes.FETCH_WEATHER_LIST_BY_NAME_REQUEST
-  payload: FetchWeatherListByNameRequestPayload
-}
-
-export type FetchWeatherListByNameSuccess = {
-  type: WeatherListTypes.FETCH_WEATHER_LIST_BY_NAME_SUCCESS,
-  payload: FetchWeatherListByNameSuccessPayload
-}
-
-export type FetchWeatherListSuccess = {
-  type: WeatherListTypes.FETCH_WEATHER_LIST_SUCCESS,
-  payload: FetchWeatherListSuccessPayload
-}
-
-export type FetchWeatherListError = {
-  type: WeatherListTypes.FETCH_WEATHER_LIST_ERROR,
-  payload: FetchWeatherListErrorPayload
-}
-
-export type WeatherListActions =
-  | FetchWeatherListError
-  | FetchWeatherListRequest
-  | FetchWeatherListSuccess
-  | FetchWeatherListByNameSuccess
-  | FetchWeatherListByNameRequest
-  | FetchWeatherBySearchRequest
-  | FetchWeatherBySearchSuccess
-  | FetchWeatherBySearchNotFound
-  | CloseSearch
-  | OpenSearch
 
 
 

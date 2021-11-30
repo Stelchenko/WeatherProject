@@ -1,9 +1,10 @@
 import React from "react";
 import {View, Text} from "react-native";
+import {styles} from "./style";
 
 const DailyScreen = () => {
   return (
-    <View style={{flex: 1, justifyContent: "center", alignItems: "center"}}>
+    <View style={styles.screen}>
       <Text>Daily Information</Text>
     </View>
   )

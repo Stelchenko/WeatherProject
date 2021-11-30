@@ -11,15 +11,11 @@ import {
 import {WeatherListTypes} from "../types/weatherListTypes";
 import {currentCityWeather, mapWeathersList} from "../../utils/mapUtils";
 
-const delay = (ms: number) => new Promise(res => setTimeout(res, ms))
-
 
 function* fetchWeather(): any {
 
   try {
     const result = yield call(Api.getWeatherFromApi);
-    yield delay(100)
-    console.log('!!!!')
     yield put(fetchWeatherListSuccess(mapWeathersList(result)))
 
   } catch (e: unknown) {

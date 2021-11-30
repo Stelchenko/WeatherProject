@@ -1,4 +1,4 @@
-import {createStore, combineReducers, applyMiddleware} from "redux";
+import {combineReducers} from "redux";
 import createSagaMiddleware from 'redux-saga'
 import weatherReducer from "./reducers/weatherReducer";
 import mySaga from "./saga/saga";
@@ -16,8 +16,6 @@ export const store = configureStore({
   reducer: rootReducer,
   middleware: (getDefaultMiddleware => getDefaultMiddleware().concat(sagaMiddleware)),
 })
-
-// const store = createStore(rootReducer, applyMiddleware(sagaMiddleware))
 
 sagaMiddleware.run(mySaga)
 
