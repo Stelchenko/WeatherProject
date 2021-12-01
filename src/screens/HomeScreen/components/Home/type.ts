@@ -4,5 +4,5 @@ export type HomeProps = {
   isLoading: boolean,
   fetchWeather: () => void,
   weathersList: WeatherListItem[],
-  navigationHandler: (path:string, props: {}) => void
+  navigationHandler: (path: string, props: {}) => void
 }

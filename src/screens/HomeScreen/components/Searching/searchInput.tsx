@@ -34,7 +34,7 @@ const SearchInput: FC<SearchInputProps> = props => {
         }}>
           {
             text ? <Image style={styles.closeIcon} source={require('../../../../assets/UIImage/CloseIcon.png')}/>
-                 : null
+              : null
           }
         </TouchableOpacity>
 

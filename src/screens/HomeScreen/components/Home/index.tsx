@@ -15,7 +15,6 @@ const Home: FC<HomeProps> = props => {
   console.log(weathersList)
 
   return (
-
     <FlatList
       columnWrapperStyle={{justifyContent: 'space-between'}}
       numColumns={2}
@@ -30,7 +29,6 @@ const Home: FC<HomeProps> = props => {
         />
       }
       renderItem={itemData => (
-
         <WeatherCard item={itemData.item} navigationHandler={navigationHandler}
                      temp={itemData.item.temp < 0 ? Math.trunc(itemData.item.temp).toString() : '+' + Math.trunc(itemData.item.temp)}/>)}/>
 

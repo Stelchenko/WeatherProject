@@ -16,13 +16,7 @@ const DetailsScreen: FC<DetailsScreenProps> = ({route}) => {
   const fetchWeatherByName = () => {
     dispatch(fetchWeatherListByNameRequest(title))
   }
-
   const date = convertDate((currentCity.dt + currentCity.timezone - 10800))
-
-  console.log(Date.now())
-  console.log(currentCity.dt)
-  console.log(currentCity.timezone)
-  console.log(currentCity.iconId)
 
   return (
     <DetailsScreenView
@@ -30,7 +24,6 @@ const DetailsScreen: FC<DetailsScreenProps> = ({route}) => {
       isLoading={isLoading}
       date={date}
     />
-
   )
 }
 

@@ -1,4 +1,4 @@
-export function convertDate(milliseconds: number){
+export function convertDate(milliseconds: number) {
   const date = new Date(milliseconds * 1000)
   const month = MONTHS[date.getMonth()]
   const day = dayFormatter(date.getDate())
@@ -14,7 +14,7 @@ export const toTimeFormat = (hours: number, minutes: number | string): string =>
   const ampm = hours >= 12 ? 'pm' : 'am';
   hours = hours % 12;
   hours = hours ? hours : 12;
-  minutes = minutes < 10 ? '0'+minutes : minutes;
+  minutes = minutes < 10 ? '0' + minutes : minutes;
   return hours + ':' + minutes + ' ' + ampm;
 }
 

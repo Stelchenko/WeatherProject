@@ -11,7 +11,7 @@ type TabImagesArray = {
   [x: string]: ImageSourcePropType,
 }
 
-export const TabImages:TabImagesArray = {
+export const TabImages: TabImagesArray = {
   City: require('../assets/UIImage/City.png'),
   Daily: require('../assets/UIImage/Daily.png'),
   Hourly: require('../assets/UIImage/Hourly.png')

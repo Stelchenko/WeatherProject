@@ -7,6 +7,7 @@ import DailyScreen from "../../screens/DailyScreen/dailyScreen";
 import HourlyScreen from "../../screens/HourlyScreen/hourlyScreen";
 
 const Tab = createBottomTabNavigator()
+
 const MyTabs = () => {
   return (
     <Tab.Navigator

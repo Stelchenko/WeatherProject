@@ -4,25 +4,26 @@ import {SearchingResultsProps} from "./type";
 
 const SearchingResults: FC<SearchingResultsProps> = props => {
   const {isNotFound, searchCity, navigationHandler} = props;
+
   return (
     <View style={styles.screen}>
       <Text style={styles.searchText}>SEARCH RESULTS</Text>
-    {isNotFound
-      ? <View style={styles.notFoundScreen}>
-        <Image source={require('../../../../assets/UIImage/NotFound.png')}/>
-        <Text style={styles.notFoundText}>NOT FOUND</Text>
-      </View>
-      : <TouchableOpacity onPress={() => navigationHandler('Details', {title: searchCity.cityName})}>
-        <View style={styles.resultContainer}>
-          <View style={styles.nameContainer}>
-            <Text style={styles.cityName}>{searchCity.cityName}</Text>
-            <Text
-              style={styles.tmp}>{searchCity.temp >= 0 ? '+' : ''}{searchCity.temp} C</Text>
-          </View>
-          <Image style={{height: 80, width: 80}}
-                 source={{uri: `https://openweathermap.org/img/wn/${searchCity.iconId}.png`}}/>
+      {isNotFound
+        ? <View style={styles.notFoundScreen}>
+          <Image source={require('../../../../assets/UIImage/NotFound.png')}/>
+          <Text style={styles.notFoundText}>NOT FOUND</Text>
         </View>
-      </TouchableOpacity>}
+        : <TouchableOpacity onPress={() => navigationHandler('Details', {title: searchCity.cityName})}>
+          <View style={styles.resultContainer}>
+            <View style={styles.nameContainer}>
+              <Text style={styles.cityName}>{searchCity.cityName}</Text>
+              <Text
+                style={styles.tmp}>{searchCity.temp >= 0 ? '+' : ''}{searchCity.temp} C</Text>
+            </View>
+            <Image style={{height: 80, width: 80}}
+                   source={{uri: `https://openweathermap.org/img/wn/${searchCity.iconId}.png`}}/>
+          </View>
+        </TouchableOpacity>}
     </View>
   )
 }

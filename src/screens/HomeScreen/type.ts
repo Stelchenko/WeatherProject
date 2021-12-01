@@ -5,7 +5,7 @@ export type HomeScreenViewProps = {
   fetchWeather: () => void,
   closeSearchingHandler: () => void,
   searchHandler: (cityName: string) => void,
-  navigationHandler: (path:string, props: {}) => void,
+  navigationHandler: (path: string, props: {}) => void,
   weathersList: WeatherListItem[],
   isLoading: boolean,
   isSearching: boolean,
@@ -15,5 +15,5 @@ export type HomeScreenViewProps = {
 }
 
 export type HomeScreenProps = {
-  navigation: {navigate: (path: string, props: {}) => void}
+  navigation: { navigate: (path: string, props: {}) => void }
 }

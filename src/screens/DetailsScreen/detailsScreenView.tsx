@@ -5,9 +5,10 @@ import {DetailsScreenViewProps} from "./type";
 
 const DetailsScreenView: FC<DetailsScreenViewProps> = props => {
   const {currentCity, isLoading, date} = props
+
   return (
     isLoading
-      ? <View style={styles.screen}><ActivityIndicator  /></View>
+      ? <View style={styles.screen}><ActivityIndicator/></View>
       : <View style={styles.screen}>
         <Text style={styles.text}>{date.date} {"\n"} {date.time} </Text>
         <Image style={styles.img} source={{uri: `https://openweathermap.org/img/wn/${currentCity.iconId}.png`}}/>

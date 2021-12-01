@@ -21,7 +21,6 @@ const HomeScreen: FC<HomeScreenProps> = props => {
   const dispatch = useDispatch();
   const weathersList = useSelector((state: RootState) => state.weather.weathersList);
   const isLoading = useSelector((state: RootState) => state.weather.isLoading);
-  const searchText = useSelector((state: RootState) => state.weather.searchText);
   const isSearching = useSelector((state: RootState) => state.weather.isSearching);
   const searchCity = useSelector((state: RootState) => state.weather.searchCity);
   const isNotFound = useSelector((state: RootState) => state.weather.isNotFound);

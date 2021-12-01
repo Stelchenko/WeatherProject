@@ -13,11 +13,9 @@ import {currentCityWeather, mapWeathersList} from "../utils/mapUtils";
 
 
 function* fetchWeather(): any {
-
   try {
     const result = yield call(Api.getWeatherFromApi);
     yield put(fetchWeatherListSuccess(mapWeathersList(result)))
-
   } catch (e: unknown) {
     if (typeof e === "string")
       yield put(fetchWeatherListError(e))
@@ -40,10 +38,7 @@ function* fetchWeatherByName(action: any): any {
 
 function* searchWeatherByName(action: any): any {
   try {
-
     const result = yield call(Api.getWeatherByNameFromApi, action.payload);
-    console.log('!!!!')
-    console.log(result)
     if (result.cod == 404 || result.cod == 400)
       yield put(fetchWeatherBySearchNotFound())
     else
@@ -55,7 +50,6 @@ function* searchWeatherByName(action: any): any {
       yield put(fetchWeatherListError(e.message))
   }
 }
-
 
 function* mySaga() {
   yield takeEvery(WeatherListTypes.FETCH_WEATHER_LIST_BY_NAME_REQUEST, fetchWeatherByName)

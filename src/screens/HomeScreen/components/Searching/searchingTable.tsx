@@ -1,16 +1,18 @@
 import React, {FC} from "react";
-import {View, Text, StyleSheet, FlatList, Image, TouchableOpacity, ActivityIndicator} from "react-native";
+import {View, StyleSheet, ActivityIndicator} from "react-native";
 import SearchingResults from "./searchingResults";
 import {SearchingTableProps} from "./type";
 
 const SearchingTable: FC<SearchingTableProps> = props => {
   const {searchCity, isNotFound, navigationHandler, isLoadingSearch} = props
+
   return (
     <View style={styles.screen}>
-      {isLoadingSearch ? <View style={styles.indicator}><ActivityIndicator size={'large'}/></View> :
-
-        <SearchingResults searchCity={searchCity} isNotFound={isNotFound} navigationHandler={navigationHandler}/>}
-
+      {
+        isLoadingSearch
+          ? <View style={styles.indicator}><ActivityIndicator size={'large'}/></View>
+          : <SearchingResults searchCity={searchCity} isNotFound={isNotFound} navigationHandler={navigationHandler}/>
+      }
     </View>
   )
 }

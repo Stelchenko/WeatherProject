@@ -20,6 +20,7 @@ const HomeScreenView: FC<HomeScreenViewProps> = props => {
     isNotFound,
     isLoadingSearch
   } = props
+
   return (
     <View style={styles.screen}>
       <SearchInput openSearch={openSearchingHandler} closeSearch={closeSearchingHandler} search={searchHandler}/>
