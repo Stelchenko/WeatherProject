@@ -10,7 +10,7 @@
 
 import React from 'react';
 import {
-  SafeAreaView,
+  SafeAreaView, StyleSheet,
 } from 'react-native';
 import {DefaultTheme, NavigationContainer} from '@react-navigation/native';
 import {Provider} from "react-redux";
@@ -31,7 +31,7 @@ const App = () => {
   return (
 
     <Provider store={store}>
-      <SafeAreaView style={{flex: 1}}>
+      <SafeAreaView style={styles.screen}>
         <NavigationContainer theme={MyTheme}>
           <MyTabs/>
         </NavigationContainer>
@@ -41,5 +41,10 @@ const App = () => {
   );
 };
 
+const styles = StyleSheet.create({
+  screen: {
+    flex: 1
+  }
+})
 
 export default App;

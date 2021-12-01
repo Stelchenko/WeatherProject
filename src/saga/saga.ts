@@ -1,5 +1,5 @@
 import {call, put, takeEvery, debounce} from 'redux-saga/effects'
-import * as Api from "../../../api/weatherApi";
+import * as Api from "../../api/weatherApi";
 import {
   fetchWeatherBySearchNotFound,
   fetchWeatherBySearchSuccess,
@@ -7,9 +7,9 @@ import {
   fetchWeatherListError,
   fetchWeatherListSuccess,
 
-} from "../actions/weather";
-import {WeatherListTypes} from "../types/weatherListTypes";
-import {currentCityWeather, mapWeathersList} from "../../utils/mapUtils";
+} from "../store/actions/weather";
+import {WeatherListTypes} from "../store/types/weatherListTypes";
+import {currentCityWeather, mapWeathersList} from "../utils/mapUtils";
 
 
 function* fetchWeather(): any {

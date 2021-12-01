@@ -1,5 +1,4 @@
-import React, {FC, useEffect, useState} from 'react'
-import {StyleSheet} from "react-native";
+import React, {FC, useEffect} from 'react'
 import {useDispatch, useSelector} from "react-redux";
 import {RootState} from "../../store/store";
 import {convertDate} from "../../utils/dateUtils";
@@ -18,15 +17,14 @@ const DetailsScreen: FC<DetailsScreenProps> = ({route}) => {
     dispatch(fetchWeatherListByNameRequest(title))
   }
 
-
-  const date = convertDate((currentCity.dt + currentCity.timezone))
+  const date = convertDate((currentCity.dt + currentCity.timezone - 10800))
 
   console.log(Date.now())
   console.log(currentCity.dt)
   console.log(currentCity.timezone)
   console.log(currentCity.iconId)
 
-  return(
+  return (
     <DetailsScreenView
       currentCity={currentCity}
       isLoading={isLoading}
@@ -35,23 +33,5 @@ const DetailsScreen: FC<DetailsScreenProps> = ({route}) => {
 
   )
 }
-
-const styles = StyleSheet.create({
-  screen: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center"
-  },
-  text: {
-    fontSize: 24,
-    fontWeight: '700',
-    textAlign: "center"
-  },
-  img: {
-    width: 111,
-    height: 111,
-    marginVertical: 50
-  }
-})
 
 export default DetailsScreen

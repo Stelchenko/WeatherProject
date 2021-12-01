@@ -22,7 +22,6 @@ export type WeatherListState = {
   searchText: string,
   isNotFound: boolean,
   isLoadingSearch: boolean,
-
   isLoadingCurrent: boolean,
   error: null | string,
 

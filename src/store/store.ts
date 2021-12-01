@@ -1,7 +1,7 @@
 import {combineReducers} from "redux";
 import createSagaMiddleware from 'redux-saga'
 import weatherReducer from "./reducers/weatherReducer";
-import mySaga from "./saga/saga";
+import mySaga from "../saga/saga";
 import {configureStore} from "@reduxjs/toolkit";
 
 const sagaMiddleware = createSagaMiddleware()
