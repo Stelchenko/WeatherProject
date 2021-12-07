@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "919840292744",
+    "project_id": "weatherproject-5",
+    "storage_bucket": "weatherproject-5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:919840292744:android:2dfab5c7303fef7c10043d",
+        "android_client_info": {
+          "package_name": "com.weather2project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "919840292744-uq9hs685jdu4g2qa26ffib81fi43uifj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.weather2project",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "919840292744-djr6r152c2feorqsff1f50fal69nsmll.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB63BmuYTjqxWfwjKMhryb1JynNagBc-ls"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "919840292744-djr6r152c2feorqsff1f50fal69nsmll.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "919840292744-g9kf1mde6lhc0rklg2to19gf2cipqrgj.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.reactjs.native.example.Weather2Project"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
