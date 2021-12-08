@@ -3,7 +3,7 @@ import {StyleSheet} from "react-native";
 export const styles = StyleSheet.create({
   searchInput: {
     width: '80%',
-    height: 30,
+    height: 45,
     paddingHorizontal: 10,
     fontSize: 18,
     color: 'black'
@@ -18,7 +18,7 @@ export const styles = StyleSheet.create({
     borderRadius: 5,
     justifyContent: "space-between",
     alignItems: "center",
-    paddingVertical: 5,
+    paddingVertical: 0,
   },
   closeIcon: {
     marginRight: 10
