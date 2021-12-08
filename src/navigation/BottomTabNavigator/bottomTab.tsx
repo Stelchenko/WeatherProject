@@ -3,7 +3,7 @@ import {Image} from 'react-native';
 import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
 import {TabImages} from "../../utils/images";
 import HomeStackScreen from "../HomeStackScreen/homeStackScreen";
-import DailyScreen from "../../screens/DailyScreen/dailyScreen";
+import Index from "../../screens/DailyScreen";
 import HourlyScreen from "../../screens/HourlyScreen/hourlyScreen";
 
 const Tab = createBottomTabNavigator()
@@ -18,7 +18,7 @@ const MyTabs = () => {
         headerShown: false,
       })}>
       <Tab.Screen name={'City'} component={HomeStackScreen}/>
-      <Tab.Screen name={'Daily'} component={DailyScreen}/>
+      <Tab.Screen name={'Daily'} component={Index}/>
       <Tab.Screen name={'Hourly'} component={HourlyScreen}/>
     </Tab.Navigator>
   )
