@@ -4,7 +4,7 @@ import {
 import {createReducer} from "@reduxjs/toolkit";
 
 import {
-  closeSearch,
+  closeSearch, fetchDailyWeatherRequest, fetchDailyWeatherSuccess,
   fetchWeatherBySearchNotFound,
   fetchWeatherBySearchRequest, fetchWeatherBySearchSuccess,
   fetchWeatherListByNameRequest, fetchWeatherListByNameSuccess,
@@ -34,6 +34,8 @@ const initialState: WeatherListState = {
     dt: 0,
     timezone: 0
   },
+  dailyInfo: [],
+  isLoadingDaily: false,
   isLoading: false,
   isSearching: false,
   isNotFound: false,
@@ -86,6 +88,13 @@ const weatherReducer = createReducer(initialState, (builder) =>
     .addCase(closeSearch, (state) => {
       state.searchCity = null
       state.isSearching = false
+    })
+    .addCase(fetchDailyWeatherRequest, (state) => {
+      state.isLoadingDaily = true
+    })
+    .addCase(fetchDailyWeatherSuccess, (state, {payload}) => {
+      state.isLoadingDaily = false
+      state.dailyInfo = payload
     })
 )
 

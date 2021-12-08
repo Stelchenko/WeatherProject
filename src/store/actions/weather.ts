@@ -18,3 +18,5 @@ export const fetchWeatherBySearchSuccess = createAction<FetchWeatherBySearchSucc
 export const fetchWeatherBySearchNotFound = createAction(WeatherListTypes.FETCH_WEATHER_BY_SEARCH_NOT_FOUND)
 export const openSearch = createAction(WeatherListTypes.OPEN_SEARCH)
 export const closeSearch = createAction(WeatherListTypes.CLOSE_SEARCH)
+export const fetchDailyWeatherRequest = createAction<{latitude: number, longitude: number}>(WeatherListTypes.FETCH_DAILY_WEATHER_REQUEST)
+export const fetchDailyWeatherSuccess = createAction<[]>(WeatherListTypes.FETCH_DAILY_WEATHER_SUCCESS)

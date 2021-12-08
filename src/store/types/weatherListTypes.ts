@@ -9,6 +9,8 @@ export enum WeatherListTypes {
   FETCH_WEATHER_BY_SEARCH_REQUEST = 'WEATHER_LIST/FETCH_WEATHER_BY_SEARCH_REQUEST',
   FETCH_WEATHER_BY_SEARCH_SUCCESS = 'WEATHER_LIST/FETCH_WEATHER_BY_SEARCH_SUCCESS',
   FETCH_WEATHER_BY_SEARCH_NOT_FOUND = 'WEATHER_LIST/FETCH_WEATHER_BY_SEARCH_NOT_FOUND',
+  FETCH_DAILY_WEATHER_REQUEST = 'WEATHER_LIST/FETCH_DAILY_WEATHER_REQUEST',
+  FETCH_DAILY_WEATHER_SUCCESS = 'WEATHER_LIST/FETCH_DAILY_WEATHER_SUCCESS',
   CLOSE_SEARCH = 'CLOSE_SEARCH',
   OPEN_SEARCH = 'OPEN_SEARCH'
 }
@@ -17,6 +19,8 @@ export type WeatherListState = {
   weathersList: WeatherListItem[],
   currentCity: WeatherListItem,
   searchCity: WeatherListItem,
+  dailyInfo: [],
+  isLoadingDaily: boolean,
   isLoading: boolean,
   isSearching: boolean,
   searchText: string,
