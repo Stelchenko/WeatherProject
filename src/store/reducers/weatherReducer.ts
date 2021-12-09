@@ -4,7 +4,7 @@ import {
 import {createReducer} from "@reduxjs/toolkit";
 
 import {
-  closeSearch, fetchDailyWeatherRequest, fetchDailyWeatherSuccess,
+  closeSearch,
   fetchWeatherBySearchNotFound,
   fetchWeatherBySearchRequest, fetchWeatherBySearchSuccess,
   fetchWeatherListByNameRequest, fetchWeatherListByNameSuccess,
@@ -34,8 +34,6 @@ const initialState: WeatherListState = {
     dt: 0,
     timezone: 0
   },
-  dailyInfo: [],
-  isLoadingDaily: false,
   isLoading: false,
   isSearching: false,
   isNotFound: false,
@@ -47,55 +45,48 @@ const initialState: WeatherListState = {
 
 
 const weatherReducer = createReducer(initialState, (builder) =>
-  builder
-    .addCase(fetchWeatherListRequest, (state) => {
-      state.isLoading = true
-      state.error = null
-    })
-    .addCase(fetchWeatherListSuccess, (state, {payload}) => {
-        state.weathersList = payload
-        state.isLoading = false
+    builder
+      .addCase(fetchWeatherListRequest, (state) => {
+        state.isLoading = true
         state.error = null
-      }
-    )
-    .addCase(fetchWeatherListError, (state, {payload}) => {
-      state.error = payload
-      state.isLoading = false
-      state.isLoadingCurrent = false
-    })
-    .addCase(fetchWeatherListByNameRequest, (state) => {
-      state.isLoadingCurrent = true
-    })
-    .addCase(fetchWeatherListByNameSuccess, (state, {payload}) => {
-      state.currentCity = payload
-      state.isLoadingCurrent = false
-    })
-    .addCase(fetchWeatherBySearchRequest, (state) => {
-      state.isLoadingSearch = true
-    })
-    .addCase(fetchWeatherBySearchSuccess, (state, {payload}) => {
-      state.searchCity = payload
-      state.isLoadingSearch = false
-      state.isNotFound = false
-    })
-    .addCase(fetchWeatherBySearchNotFound, (state) => {
-      state.isLoadingSearch = false
-      state.isNotFound = true
-    })
-    .addCase(openSearch, (state) => {
-      state.isSearching = true
-    })
-    .addCase(closeSearch, (state) => {
-      state.searchCity = null
-      state.isSearching = false
-    })
-    .addCase(fetchDailyWeatherRequest, (state) => {
-      state.isLoadingDaily = true
-    })
-    .addCase(fetchDailyWeatherSuccess, (state, {payload}) => {
-      state.isLoadingDaily = false
-      state.dailyInfo = payload
-    })
+      })
+      .addCase(fetchWeatherListSuccess, (state, {payload}) => {
+          state.weathersList = payload
+          state.isLoading = false
+          state.error = null
+        }
+      )
+      .addCase(fetchWeatherListError, (state, {payload}) => {
+        state.error = payload
+        state.isLoading = false
+        state.isLoadingCurrent = false
+      })
+      .addCase(fetchWeatherListByNameRequest, (state) => {
+        state.isLoadingCurrent = true
+      })
+      .addCase(fetchWeatherListByNameSuccess, (state, {payload}) => {
+        state.currentCity = payload
+        state.isLoadingCurrent = false
+      })
+      .addCase(fetchWeatherBySearchRequest, (state) => {
+        state.isLoadingSearch = true
+      })
+      .addCase(fetchWeatherBySearchSuccess, (state, {payload}) => {
+        state.searchCity = payload
+        state.isLoadingSearch = false
+        state.isNotFound = false
+      })
+      .addCase(fetchWeatherBySearchNotFound, (state) => {
+        state.isLoadingSearch = false
+        state.isNotFound = true
+      })
+      .addCase(openSearch, (state) => {
+        state.isSearching = true
+      })
+      .addCase(closeSearch, (state) => {
+        state.searchCity = initialState.searchCity
+        state.isSearching = false
+      })
 )
 
 export default weatherReducer

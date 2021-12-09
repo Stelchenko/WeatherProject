@@ -3,11 +3,13 @@ import createSagaMiddleware from 'redux-saga'
 import weatherReducer from "./reducers/weatherReducer";
 import mySaga from "../saga/saga";
 import {configureStore} from "@reduxjs/toolkit";
+import dailyReducer from "./reducers/dailyReducer";
 
 const sagaMiddleware = createSagaMiddleware()
 
 const rootReducer = combineReducers({
-  weather: weatherReducer
+  weather: weatherReducer,
+  daily: dailyReducer
 })
 
 export type RootState = ReturnType<typeof rootReducer>

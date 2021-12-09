@@ -19,8 +19,6 @@ export type WeatherListState = {
   weathersList: WeatherListItem[],
   currentCity: WeatherListItem,
   searchCity: WeatherListItem,
-  dailyInfo: [],
-  isLoadingDaily: boolean,
   isLoading: boolean,
   isSearching: boolean,
   searchText: string,
@@ -28,7 +26,11 @@ export type WeatherListState = {
   isLoadingSearch: boolean,
   isLoadingCurrent: boolean,
   error: null | string,
+}
 
+export type DailyState = {
+  dailyInfo: [],
+  isLoadingDaily: boolean,
 }
 
 export type FetchWeatherListSuccessPayload = WeatherListItem[]

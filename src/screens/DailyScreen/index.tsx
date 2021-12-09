@@ -6,8 +6,7 @@ import DailyScreenView from "./dailyScreenView";
 
 const Index = () => {
 
-
-  const [viewLocation, setViewLocation] = useState()
+  const [viewLocation, setViewLocation] = useState<{latitude: number, longitude: number} | null>(null)
   const getLocation = async () => {
 
     let permission = await RNLocation.checkPermission({
