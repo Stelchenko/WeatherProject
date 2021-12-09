@@ -4,7 +4,7 @@ import {generateCoords} from "../src/utils/coordsGenerator";
 export const MAIN_URL='https://api.openweathermap.org/data/2.5/find?units=metric&'
 export const BY_NAME_URL = 'https://api.openweathermap.org/data/2.5/weather?units=metric&q='
 export const API_KEY = 'b4ff9cd7760136e6455768711c688ae7'
-export const COUNT_CITIES = 8
+export const COUNT_CITIES = 20
 export const DAYLI_URL = 'https://api.openweathermap.org/data/2.5/onecall?exclude=minutely,hourly,current,alerts&units=metric'
 
 export const getWeatherFromApi = () => {
@@ -34,9 +34,6 @@ export const getWeatherByDayFromApi = (payload: {latitude: number, longitude: nu
   return fetch(`${DAYLI_URL}&lat=${payload.latitude}&lon=${payload.longitude}&appid=${API_KEY}`)
     .then((response) => response.json())
     .then((json) => {
-      console.log('BY DAY')
-      console.log(payload)
-      console.log(json.daily)
       return json.daily
     })
     .catch((error) => {

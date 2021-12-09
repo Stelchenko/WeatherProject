@@ -12,7 +12,7 @@ const DailyCard: FC<DailyCardProps> = props => {
         <View style={styles.nameContainer}>
           <Text style={styles.cityName}>{convertDate(dailyInfo.dt).date}</Text>
           <Text
-            style={styles.tmp}>{dailyInfo.temp.day >= 0 ? '+' : ''}{dailyInfo.temp.day} C</Text>
+            style={styles.tmp}>{dailyInfo.temp.day >= 0 ? '+' : ''}{Math.trunc(dailyInfo.temp.day)} C</Text>
         </View>
         <Image style={{height: 80, width: 80}}
                source={{uri: `https://openweathermap.org/img/wn/${dailyInfo.weather[0].icon}.png`}}/>
